@@ -4,8 +4,10 @@ import { userList } from "./Data";
 
 const userSlice = createSlice({
     name: "users",
-    initialState: {userList},
+    initialState: userList,
     reducers: {
 
     }
 })
+
+export default userSlice.reducer;

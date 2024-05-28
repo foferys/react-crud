@@ -5,10 +5,13 @@ import './index.css'
 import { Provider } from 'react-redux'
 import { configureStore } from '@reduxjs/toolkit'
 
+import UserReducer from './UserReducer.jsx'
+
+
 /* user reducer */
 const store = configureStore({
   reducer: {
-    // user:  
+    user:  UserReducer
   }
 })
 
