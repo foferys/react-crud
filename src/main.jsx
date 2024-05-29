@@ -4,14 +4,15 @@ import App from './App.jsx'
 import './index.css'
 import { Provider } from 'react-redux'
 import { configureStore } from '@reduxjs/toolkit'
-
+// import dello slice userReducer.jsx ->assegnato poi sotto nel reducer dello store
 import UserReducer from './UserReducer.jsx'
+
 
 
 /* user reducer */
 const store = configureStore({
   reducer: {
-    user:  UserReducer
+    users:  UserReducer
   }
 })
 
