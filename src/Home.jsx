@@ -1,12 +1,13 @@
 
 // questo useSelector ci da l'accesso al reducer in main jsx
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom';
 
 
 function Home() {
 
   const users = useSelector((state) => state.users);
-  console.log(users);
+  // console.log(users);
 
 
   return (
@@ -14,7 +15,7 @@ function Home() {
 
       <h2>Crud app with json server</h2>
 
-      <button className='btn btn-succes my-3 bg-success text-white'>Create+</button>
+      <Link to={"/create"} className='btn btn-succes my-3 bg-success text-white'>Create+</Link>
       <table className="table" >
         <thead>
             <tr>
