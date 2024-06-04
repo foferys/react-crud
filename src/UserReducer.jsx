@@ -20,9 +20,17 @@ const userSlice = createSlice({
                 updUser.name = name;
                 updUser.email = email;
             }
+        },
+        delUser: (state, action) => {
+            const indice = state.find(item => item.id == action.payload);
+            
+            if(indice) {
+                console.log(indice);
+                state.splice(indice, 1);
+            }
         }
     }
 })
 
-export const {addUser, updateUser} = userSlice.actions;
+export const {addUser, updateUser, delUser} = userSlice.actions;
 export default userSlice.reducer;

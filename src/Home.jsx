@@ -1,13 +1,19 @@
 
 // questo useSelector ci da l'accesso al reducer in main jsx
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
+import { delUser } from './UserReducer';
 
 
 function Home() {
 
   const users = useSelector((state) => state.users);
   // console.log(users);
+  const dispatch = useDispatch();
+
+  const handleDelete = (idEl) => {
+    dispatch(delUser(idEl))
+  }
 
 
   return (
@@ -52,7 +58,8 @@ function Home() {
                         Sei sicuro di voler eliminarlo?
                       </div>
                       <div className="modal-footer">
-                        <button type="button" className="btn btn-danger" data-bs-dismiss="modal">Si, Elimina</button>
+                        <button type="button" className="btn border" data-bs-dismiss="modal">Annulla</button>
+                        <button className='btn btn-danger ms-3' onClick={() => handleDelete(user.id)} data-bs-dismiss="modal">Delete</button>
                       </div>
                     </div>
                   </div>
