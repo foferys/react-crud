@@ -7,6 +7,9 @@ import { configureStore } from '@reduxjs/toolkit'
 // import dello slice userReducer.jsx ->assegnato poi sotto nel reducer dello store
 import UserReducer from './UserReducer.jsx'
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 
 
 /* user reducer */
