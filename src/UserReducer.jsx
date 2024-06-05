@@ -22,11 +22,13 @@ const userSlice = createSlice({
             }
         },
         delUser: (state, action) => {
-            const indice = state.find(item => item.id == action.payload);
-            
-            if(indice) {
-                console.log(indice);
-                state.splice(indice, 1);
+            const idDaEl = action.payload;
+            const indice = state.findIndex(item => item.id === idDaEl); // Trova l'indice dell'elemento
+
+            console.log("da eliminare:" + idDaEl);
+
+            if (indice !== -1) { // Verifica se l'elemento esiste
+                state.splice(indice, 1); // Rimuovi l'elemento all'indice trovato
             }
         }
     }
