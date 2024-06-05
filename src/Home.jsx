@@ -28,7 +28,7 @@ function Home() {
   return (
     <div className='container'>
 
-      <h2>Crud app with json server</h2>
+      <h2 className='text-center mt-5'>Crud app with json server</h2>
 
       <Link to={"/create"} className='btn btn-succes my-3 bg-success text-white'>Create+</Link>
       <table className="table" >
