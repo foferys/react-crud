@@ -5,13 +5,18 @@ export const userList = [
         id: 1
     },
     {
-        name: "Gianpiero Ferraor",
+        name: "Gianpiero Ferraro",
         email: "gian@gmail.com",
         id: 2
     },
     {
-        name: "Marco scorzo",
-        email: "marco@gmail.com",
+        name: "Mattia scorzo",
+        email: "higuain@libero.it",
+        id: 3
+    },
+    {
+        name: "Marco Ferraro",
+        email: "fmarco94@libero.it",
         id: 3
     }
 ]

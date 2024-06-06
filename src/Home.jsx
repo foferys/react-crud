@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { delUser } from './UserReducer';
 import { useState } from 'react';
+import { UilUserPlus,UilEdit, UilFileTimesAlt } from '@iconscout/react-unicons'; //->import icona iconscout usata al pulsante di creazione
 
 function Home() {
 
@@ -30,7 +31,7 @@ function Home() {
 
       <h2 className='text-center mt-5'>Crud app with json server</h2>
 
-      <Link to={"/create"} className='btn btn-succes my-3 bg-success text-white'>Create+</Link>
+      <Link to={"/create"} className='btn btn-succes my-3 bg-success text-white'>Aggiungi <UilUserPlus /></Link>
       <table className="table" >
         <thead>
             <tr>
@@ -48,12 +49,12 @@ function Home() {
               <td>{user.name}</td>
               <td>{user.email}</td>
               <td>
-                <Link to={`/edit/${user.id}`} className='btn btn-sm btn-primary'>Modifica</Link>
+                <Link to={`/edit/${user.id}`} className='btn btn-sm btn-primary'>Modifica<UilEdit /></Link>
 
                 {/* Button trigger modal ----
                 quando il bottone viene cliccato, setSelectedUser(user) viene chiamato con l'oggetto user corrente. */}
                 <button type="button" className="btn btn-sm btn-danger ms-3" onClick={() => setSelectedUser(user)} data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  Elimina
+                  Elimina<UilFileTimesAlt />
                 </button>
               </td>
             </tr>
@@ -64,7 +65,6 @@ function Home() {
 
       {/* Modale a comparsa --- 
       Di seguito usiamo selectedUser tramite useState per mostrare il nome e l'email dell'utente selezionato nella modale.*/}
-      
       <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog">
           <div className="modal-content">
@@ -77,11 +77,7 @@ function Home() {
             </div>
             <div className="modal-footer">
               <button type="button" className="btn border" data-bs-dismiss="modal">Annulla</button>
-              <button 
-                className='btn btn-danger ms-3' 
-                onClick={() => handleDelete(selectedUser.id)} 
-                data-bs-dismiss="modal"
-              >
+              <button className='btn btn-danger ms-3' onClick={() => handleDelete(selectedUser.id)} data-bs-dismiss="modal">
                 Elimina
               </button>
             </div>
